@@ -1,4 +1,5 @@
-/*form {
+/*
+form {
   display: flex;
   flex-direction: column;
 }
@@ -12,7 +13,8 @@ h1 {
   text-align: center;
 }
 
-input, textarea {
+input,
+textarea {
   text-align: center;
   height: 30px;
   width: 400px;
