@@ -1,33 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>Formulario JavaScript</title>
+    <title>Formulario Películas</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link href="./style.css" rel="stylesheet">
   </head>
   <body>
-    <h1>Alumnos de Programación Web II</h1>
+    <h1>Formulario de Películas</h1>
     <div class="container">
       <form id="formulario">
-        <input class="form-control" type="text" id="nombre" placeholder="nombre"><br />
-        <input class="form-control" type="text" id="apellido" placeholder="apellido"><br />
-        <input class="form-control" type="text" id="correo" placeholder="correo"><br />
-        <input class="form-control" type="number" id="edad" placeholder="0"><br />
-        <textarea class="form-control" id="hobbies" placeholder="hobbies"></textarea><br />
-        <button class="btn btn-primary" type="submit" id="botonAgregar">Agregar Alumno</button><br />
+        <input class="form-control" type="text" id="titulo" placeholder="Titulo" required>
+        <input type="number" placeholder="2000" class="form-control" id="anio" min="2000">
+        <input type="number" id="duracion" placeholder="120m" required class="form-control">
+        <select name="Genero" id="genero" class="form-select" placeholder="Selecciona un género">
+          <option value="0" selected>Selecciona un género</option>
+          <option value="comedia">Comedia</option>
+          <option value="drama">Drama</option>
+          <option value="horror">Horror</option>
+          <option value="musical">Musical</option>
+          <option value="accion">Acción</option>
+        </select>
+        <input type="text" id="director" class="form-control" placeholder="Director" required>
+        <textarea name="sinopsis" id="sinopsis" rows="5" class="form-control" placeholder="sinopsis"></textarea>
       </form>
     </div>
 
+    <h3>Lista de películas</h3>
     <table class="table">
       <thead>
         <tr>
-          <td>Nombre</td>
-          <td>Apellido</td>
-          <td>Correo</td>
-          <td>Edad</td>
-          <td>Hobbies</td>
+          <td>Título</td>
+          <td>Año</td>
+          <td>Duración</td>
+          <td>Género</td>
+          <td>Director</td>
+          <td>Sinopsis</td>
         </tr>
       </thead>
       <tbody id="tableBody">

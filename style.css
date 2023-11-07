@@ -7,16 +7,24 @@ form {
 
 h1 {
   text-align: center;
+  margin: 30px;
 }
 
 .container {
   text-align: center;
+  margin-bottom: 10px;
 }
 
 input,
-textarea {
+textarea,
+select {
   text-align: center;
-  height: 30px;
+  /*min-height: 80px;*/
   width: 400px;
   margin-bottom: 10px;
+}
+
+h3 {
+  text-align: center;
+  margin-top: 20px;
 }
