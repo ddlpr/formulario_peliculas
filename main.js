@@ -1,10 +1,10 @@
 const form = document.querySelector('#formulario');
-const inputTitle = document.getElementById("titulo");
-const inputYear = document.getElementById("anio");
-const inputDuration = document.getElementById("duracion");
-const inputGenre = document.getElementById("genero");
-const inputDirector = document.getElementById("director");
-const textAreaSynopsis = document.getElementById("sinopsis");
+const inputTitle = document.querySelector("#titulo");
+const inputYear = document.querySelector("#anio");
+const inputDuration = document.querySelector("#duracion");
+const inputGenre = document.querySelector("#genero");
+const inputDirector = document.querySelector("#director");
+const textAreaSynopsis = document.querySelector("#sinopsis");
 const table = document.querySelector('.table');
 
 let editingRow = null;
@@ -25,12 +25,12 @@ form.addEventListener('submit', (e) => {
 
 function getFormData() {
   return {
-    titulo: document.querySelector('#titulo').value,
-    anio: document.querySelector('#anio').value,
-    duracion: document.querySelector('#duracion').value,
-    genero: document.querySelector('#genero').value,
-    director: document.querySelector('#director').value,
-    sinopsis: document.querySelector('#sinopsis').value,
+    titulo: inputTitle.value,
+    anio: inputYear.value,
+    duracion: inputDuration.value,
+    genero: inputGenre.value,
+    director: inputDirector.value,
+    sinopsis: textAreaSynopsis.value,
   };
 }
 
@@ -41,10 +41,10 @@ function insertRecord(formData) {
     cell.textContent = formData[key];
   }
   let cell = row.insertCell();
-  cell.innerHTML = `<button type="button" class="btn btn-danger"><i class="bi bi-trash3-fill"></i></button>`;
+  cell.innerHTML = `<button type="button" class="btn btn-success" onclick="fillEditForm(${row.rowIndex})"><i class="bi bi-pencil-fill"></i></button>`;
 
   cell = row.insertCell();
-  cell.innerHTML = `<button type="button" class="btn btn-success" onclick="fillEditForm(${row.rowIndex})"><i class="bi bi-pencil-fill"></i></button>`;
+  cell.innerHTML = `<button type="button" class="btn btn-danger"><i class="bi bi-trash3-fill"></i></button>`;
 }
 
 function fillEditForm(rowIndex) {
