@@ -44,7 +44,7 @@ function insertRecord(formData) {
   cell.innerHTML = `<button type="button" class="btn btn-success" onclick="fillEditForm(${row.rowIndex})"><i class="bi bi-pencil-fill"></i></button>`;
 
   cell = row.insertCell();
-  cell.innerHTML = `<button type="button" class="btn btn-danger"><i class="bi bi-trash3-fill"></i></button>`;
+  cell.innerHTML = `<button type="button" class="btn btn-danger" onclick="deleteRecord(${row.rowIndex})"><i class="bi bi-trash3-fill"></i></button>`;
 }
 
 function fillEditForm(rowIndex) {
@@ -64,4 +64,12 @@ function updateRecord(formData) {
   editingRow.children[3].textContent = formData.genero;
   editingRow.children[4].textContent = formData.director;
   editingRow.children[5].textContent = formData.sinopsis;
+}
+
+function deleteRecord(rowIndex) {
+  let row = table.rows[rowIndex];
+  if (confirm(`Seguro que quieres eliminar la película, "${row.cells[0].textContent}"?`)) {
+    table.deleteRow(rowIndex);
+  }
+  form.reset();
 }
